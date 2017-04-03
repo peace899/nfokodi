@@ -45,7 +45,7 @@ if [ -f "artist.nfo" ]; then
 sed -i '/\<album\>/Q' artist.nfo
 artist_albums >> artist.nfo
 
-else
+else #if artist.nfo doesn't exist create a new one
 bio=`curl --silent $url/$artist_mbid/wikipedia-extract | grep wikipedia-extract |sed -e 's/<[^>]*>//g' | perl -MHTML::Entities -pe 'decode_entities($_);'`
 curl --silent $url/$artist_mbid > /tmp/mb_info
 curl --silent 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&api_key='$apikey'&mbid='$artist_mbid'' > /tmp/lastfm_info
