@@ -32,6 +32,7 @@ artist_mbid=`echo "$artist_info" | awk '/mb_albumartistid: / {$1=""; print $0}' 
 ar_albums=`echo "$artist_info"  |awk '/album: / {$1=""; print $0}' |sed 's/^ *//g' |sort -u | wc -l`
 album=`echo "$album_info" | awk '/album: / {$1=""; print $0}' |sed 's/^ *//g' |sort -u | head -1`
 year=`echo "$album_info" | awk '/original_year:/ {$1=""; print $0}' |sed 's/^ *//g' | uniq | head -1` 
+ #my file/directory structure is /mnt/storage/music/beets/genre/artist/album/track title.mp3
 artist_f=`echo $ar_folder |awk -F/ '{print $7}'`
 
 artist_info () {
