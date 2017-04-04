@@ -3,8 +3,8 @@
 #my music folder structure is /mnt/storage/music/beets/genre/artist/album/track title.ext
 
 #config and lastfm api-key
-apikey='ec61820ccf6e0c0c915c91dcb37eaf5f'
-config="$HOME/.config/beets/RnBconfig.yaml" #change to your config.yaml normally '$HOME/.config/beets/config.yaml'
+apikey=''
+config="" #change to your config.yaml normally '$HOME/.config/beets/config.yaml'
 directory=`cat $config |awk '/directory:/ {$1=""; print $0}' |sed 's/^ *//g'` #get library/collection directory
 nfs_dir='nfs://192.168.2.122/srv/nfs/music' #change to your smb or nfs correct directory
 
@@ -17,7 +17,7 @@ albumfile=/mnt/storage/Music/webinfo/lastfm/${artist}-${album}.xml
 audio_types="wma|mp3|wav|m4a|flac|aac|ogg" 
 
 #music collection locations (al_folder: album folder, ar_folder: artist folder)
-find "$directory" -type f | egrep "\.($audio_types)$" |grep  -oP '^/.*(?=/)' | uniq | head -20 > /tmp/al_folders
+find "$directory" -type f | egrep "\.($audio_types)$" |grep  -oP '^/.*(?=/)' | uniq > /tmp/al_folders
 
 #scrape for data
 FILE=/tmp/al_folders
