@@ -4,8 +4,8 @@
 #PHP required for urlencode
 
 #config and lastfm api-key
-apikey='ec61820ccf6e0c0c915c91dcb37eaf5f'
-config="$HOME/.config/beets/RnBconfig.yaml" #change to your config.yaml normally '$HOME/.config/beets/config.yaml'
+apikey=''
+config="" #change to your config.yaml normally '$HOME/.config/beets/config.yaml'
 directory=`cat $config |awk '/directory:/ {$1=""; print $0}' |sed 's/^ *//g'` #get library/collection directory
 nfs_dir='nfs://192.168.2.122/srv/nfs/music' #change to your smb or nfs correct directory
 
