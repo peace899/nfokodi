@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#kodi nfo creator for music with data from headphones and beets recursively
+#kodi nfo creator for music with data from headphones DB and beets recursively
 
 #db files
 headphonesdb=/opt/headphones/headphones.db #location of headphones DB
