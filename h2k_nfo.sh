@@ -99,7 +99,7 @@ cat <<EOT > album.nfo
         		<musicBrainzArtistID>$artist_mbid</musicBrainzArtistID>
     		</albumArtistCredits>
 EOT
-	#album_tracks >> album.nfo
+	album_tracks >> album.nfo
 	fi
 	}
 
