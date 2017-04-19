@@ -6,7 +6,7 @@
 
 
 #config and lastfm api-key
-apikey='ec61820ccf6e0c0c915c91dcb37eaf5f'
+apikey=''
 nfs_dir='nfs://192.168.2.122/srv/nfs/music' #change to your smb or nfs correct directory
 sqlbeets='sqlite3 /home/stepper/.config/beets/library.blb'
 
