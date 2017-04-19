@@ -2,6 +2,8 @@
 
 #my music folder structure is /mnt/storage/music/beets/genre/artist/album/track title.ext
 #PHP required for urlencode
+#It requires a modified runafter.py plugin from m-urban (https://github.com/m-urban) to work
+
 
 #config and lastfm api-key
 apikey='ec61820ccf6e0c0c915c91dcb37eaf5f'
