@@ -10,7 +10,7 @@ apikey=''
 nfs_dir='nfs://192.168.2.122/srv/nfs/music' #change to your smb or nfs correct directory
 sqlbeets='sqlite3 /home/stepper/.config/beets/library.blb'
 
-line=`${sqlbeets} "select * from items" | tail -1 | awk -F"|" '{print $53}'|grep  -oP '^/.*(?=/)'`
+line=`${sqlbeets} "select * from items" | tail -1 |grep -oP '(?=/mnt).+?(?=\|)' |grep  -oP '^/.*(?=/)'`
 ar_folder=`dirname "$line"`
 artist_f=`basename "$ar_folder"`
 artist_mbid=`beet info "$ar_folder" | awk '/mb_albumartistid:/ {$1=""; print $0}' |sed 's/^ *//g' | uniq`
